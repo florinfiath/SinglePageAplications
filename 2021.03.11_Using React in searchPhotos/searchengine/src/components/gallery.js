@@ -3,7 +3,9 @@ import React from "react";
 class Gallery extends React.Component {
 
  previewBtnClick = (index) => {
-     console.log(index)
+     console.log(index);
+     this.props.preview(index);
+     
  }
 
   render() {
@@ -15,14 +17,13 @@ class Gallery extends React.Component {
               key={element.id}
               className="card p-3"
               style={{width:"18rem"}}>
-              <img className="card-img-top" height="200" src={element.previewURL} alt='{element.tags}'/>
+              <img className="card-img-top" height="200" src={element.previewURL} alt={element.tags}/>
               <div className="card-body">
                 <h5 className="card-title">${element.user}</h5>
                 <p className="card-text" style={{minheight:"100px"}}>
                   {element.tags}
                 </p>
-                <butoon onClick={() => {this.previewBtnClick(idx)}} className="btn btn-primary">Preview</butoon>
-                
+                <button onClick={() => {this.previewBtnClick(idx)}} className="btn btn-primary">Preview</button>
               </div>
             </div>
           ))}
