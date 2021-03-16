@@ -2,9 +2,9 @@ import React from "react";
 
 
 const PreviewSingleImage = (props) => {
-   let componentWillUnmount = () => {
-        console.log('preview component is going to be deleted from the DOM ')
-    }  
+  //  let componentWillUnmount = () => {
+  //       console.log('preview component is going to be deleted from the DOM ')
+  //   }  
     
     return (
       <div className="container">

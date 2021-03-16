@@ -12,10 +12,11 @@ import getImages from "../api";
     getImages(state.searchWord).then((data) => {
       console.log(data);
       props.save(data.hits);
+     
+      
     });
   };
 
-  
     return (
       <div className="container">
         <div className="row">
@@ -23,6 +24,7 @@ import getImages from "../api";
             <div className="input-group-prepend">
               <button
                 onClick={searchBtnClick}
+               
                 className="btn btn-outline-secondary"
                 type="button"
               >

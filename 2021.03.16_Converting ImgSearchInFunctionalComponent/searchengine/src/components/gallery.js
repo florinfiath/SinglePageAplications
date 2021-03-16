@@ -3,7 +3,7 @@ import React from "react";
 const Gallery = (props) => {
 
  let previewBtnClick = (index) => {
-     console.log(index);
+     window.scrollTo(0, 0);
      props.preview(index);
      
  }
