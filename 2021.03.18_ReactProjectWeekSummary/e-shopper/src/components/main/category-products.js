@@ -130,67 +130,67 @@ const CategoryProducts = () => {
 							</div>
 						</div>
 						
-						<div classNameName="price-range">
+						<div className="price-range">
 							<h2>Price Range</h2>
-							<div classNameName="well text-center">
-								 <input type="text" classNameName="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2"/><br/>
-								 <b classNameName="pull-left">$ 0</b> <b classNameName="pull-right">$ 600</b>
+							<div className="well text-center">
+								 <input type="text" className="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2"/><br/>
+								 <b className="pull-left">$ 0</b> <b className="pull-right">$ 600</b>
 							</div>
 						</div>
 						
-						<div classNameName="shipping text-center">
+						<div className="shipping text-center">
 							<img src="images/home/shipping.jpg" alt="" />
 						</div>
 					
 					</div>
 				</div>	
-				<div classNameName="col-sm-9 padding-right">
-					<div classNameName="features_items">
-						<h2 classNameName="title text-center">Features Items</h2>
-						<div classNameName="col-sm-4">
-							<div classNameName="product-image-wrapper">
-								<div classNameName="single-products">
-										<div classNameName="productinfo text-center">
+				<div className="col-sm-9 padding-right">
+					<div className="features_items">
+						<h2 className="title text-center">Features Items</h2>
+						<div className="col-sm-4">
+							<div className="product-image-wrapper">
+								<div className="single-products">
+										<div className="productinfo text-center">
 											<img src="images/home/product1.jpg" alt="" />
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
-											<a href="#" classNameName="btn btn-default add-to-cart"><i classNameName="fa fa-shopping-cart"></i>Add to cart</a>
+											<a href="#" className="btn btn-default add-to-cart"><i className="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
-										<div classNameName="product-overlay">
-											<div classNameName="overlay-content">
+										<div className="product-overlay">
+											<div className="overlay-content">
 												<h2>$56</h2>
 												<p>Easy Polo Black Edition</p>
-												<a href="#" classNameName="btn btn-default add-to-cart"><i classNameName="fa fa-shopping-cart"></i>Add to cart</a>
+												<a href="#" className="btn btn-default add-to-cart"><i className="fa fa-shopping-cart"></i>Add to cart</a>
 											</div>
 										</div>
 								</div>
-								<div classNameName="choose">
-									<ul classNameName="nav nav-pills nav-justified">
-										<li><a href="#"><i classNameName="fa fa-plus-square"></i>Add to wishlist</a></li>
-										<li><a href="#"><i classNameName="fa fa-plus-square"></i>Add to compare</a></li>
+								<div className="choose">
+									<ul className="nav nav-pills nav-justified">
+										<li><a href="#"><i className="fa fa-plus-square"></i>Add to wishlist</a></li>
+										<li><a href="#"><i className="fa fa-plus-square"></i>Add to compare</a></li>
 									</ul>
 								</div>
 							</div>
 						</div>
-						<div classNameName="col-sm-4">
-							<div classNameName="product-image-wrapper">
-								<div classNameName="single-products">
-									<div classNameName="productinfo text-center">
+						<div className="col-sm-4">
+							<div className="product-image-wrapper">
+								<div className="single-products">
+									<div className="productinfo text-center">
 										<img src="images/home/product2.jpg" alt="" />
 										<h2>$56</h2>
 										<p>Easy Polo Black Edition</p>
-										<a href="#" classNameName="btn btn-default add-to-cart"><i classNameName="fa fa-shopping-cart"></i>Add to cart</a>
+										<a href="#" className="btn btn-default add-to-cart"><i className="fa fa-shopping-cart"></i>Add to cart</a>
 									</div>
-									<div classNameName="product-overlay">
-										<div classNameName="overlay-content">
+									<div className="product-overlay">
+										<div className="overlay-content">
 											<h2>$56</h2>
 											<p>Easy Polo Black Edition</p>
-											<a href="#" classNameName="btn btn-default add-to-cart"><i classNameName="fa fa-shopping-cart"></i>Add to cart</a>
+											<a href="#" className="btn btn-default add-to-cart"><i className="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
 									</div>
 								</div>
-								<div classNameName="choose">
-									<ul classNameName="nav nav-pills nav-justified">
+								<div className="choose">
+									<ul className="nav nav-pills nav-justified">
 										<li><a href="#"><i className="fa fa-plus-square"></i>Add to wishlist</a></li>
 										<li><a href="#"><i className="fa fa-plus-square"></i>Add to compare</a></li>
 									</ul>
