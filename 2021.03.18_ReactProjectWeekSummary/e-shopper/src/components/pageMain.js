@@ -1,14 +1,14 @@
 import React from 'react';
-import Slider from './main/slider';
-import CategoryProducts from './main/category-products';
+import Slider from './slider';
+import CategoryProducts from './category-products';
 
 
 
 const PageMain = () => {
     return (
         <div>
-           <Slider/>
-           <CategoryProducts/>
+        <Slider/>
+        <CategoryProducts/>
         </div>
     );
 };

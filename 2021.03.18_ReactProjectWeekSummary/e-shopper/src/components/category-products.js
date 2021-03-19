@@ -1,24 +1,26 @@
 import React from 'react';
+import { Row, Col, Input, Button, Collapse, Container } from "react-bootstrap";
+
 
 const CategoryProducts = () => {
     return (
        <section>
-		<div className="container">
-			<div className="row">
-				<div className="col-sm-3">
+		<Container className="container">
+			<Row className="row">
+				<Col className="col-sm-3">
 					<div className="left-sidebar">
 						<h2>Category</h2>
 						<div className="panel-group category-products" id="accordian">
 							<div className="panel panel-default">
 								<div className="panel-heading">
 									<h4 className="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+										<a data-toggle={Collapse} data-parent="#accordian" href="#sportswear">
 											<span className="badge pull-right"><i className="fa fa-plus"></i></span>
 											Sportswear
 										</a>
 									</h4>
 								</div>
-								<div id="sportswear" className="panel-collapse collapse">
+								<div id="sportswear" className="panel-collapse Collapse">
 									<div className="panel-body">
 										<ul>
 											<li><a href="#">Nike </a></li>
@@ -143,8 +145,8 @@ const CategoryProducts = () => {
 						</div>
 					
 					</div>
-				</div>	
-				<div className="col-sm-9 padding-right">
+				</Col>	
+				<Col className="col-sm-9 padding-right">
 					<div className="features_items">
 						<h2 className="title text-center">Features Items</h2>
 						<div className="col-sm-4">
@@ -687,9 +689,9 @@ const CategoryProducts = () => {
 						</div>
 					</div>
 					
-				</div>
-			</div>
-		</div>
+				</Col>
+			</Row>
+		</Container>
 	</section>
 
     );
