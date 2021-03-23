@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, BrowserRouter as Router } from "react-router-dom";
 
 
 const BarMiddle = () => {
@@ -10,7 +10,7 @@ const BarMiddle = () => {
             <div className="col-md-4 clearfix">
               <div className="logo pull-left">
                 <Link to="/">
-                  <img src="images/home/logo.png" alt="" />
+                  <img src="../images/home/logo.png" alt="" />
                 </Link>
               </div>
               <div className="btn-group pull-right clearfix">
@@ -67,17 +67,17 @@ const BarMiddle = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/checkout">
+                    <Link to="../shop/checkout">
                       <i className="fa fa-crosshairs"></i> Checkout
                     </Link>
                   </li>
                   <li>
-                    <Link to="/cart">
+                    <Link to="../shop/cart">
                       <i className="fa fa-shopping-cart"></i> Cart
                     </Link>
                   </li>
                   <li>
-                    <Link to="/login">
+                    <Link to="../shop/login">
                       <i className="fa fa-lock"></i> Login
                     </Link>
                   </li>

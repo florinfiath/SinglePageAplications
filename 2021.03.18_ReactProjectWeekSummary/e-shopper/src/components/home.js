@@ -1,26 +1,23 @@
 import React from 'react';
-import { Row, Col, Input, Button, Collapse, Container } from "react-bootstrap";
 
-
-const CategoryProducts = () => {
+const Home = () => {
     return (
-       <section>
-		<Container className="container">
-			<Row className="row">
-				<Col className="col-sm-3">
+		<div classNameName="container">
+			<div className="row">
+				<div className="col-sm-3">
 					<div className="left-sidebar">
 						<h2>Category</h2>
 						<div className="panel-group category-products" id="accordian">
 							<div className="panel panel-default">
 								<div className="panel-heading">
 									<h4 className="panel-title">
-										<a data-toggle={Collapse} data-parent="#accordian" href="#sportswear">
+										<a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
 											<span className="badge pull-right"><i className="fa fa-plus"></i></span>
 											Sportswear
 										</a>
 									</h4>
 								</div>
-								<div id="sportswear" className="panel-collapse Collapse">
+								<div id="sportswear" className="panel-collapse collapse">
 									<div className="panel-body">
 										<ul>
 											<li><a href="#">Nike </a></li>
@@ -135,7 +132,7 @@ const CategoryProducts = () => {
 						<div className="price-range">
 							<h2>Price Range</h2>
 							<div className="well text-center">
-								 <input type="text" className="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2"/><br/>
+								 <input type="text" className="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2"/><br />
 								 <b className="pull-left">$ 0</b> <b className="pull-right">$ 600</b>
 							</div>
 						</div>
@@ -145,8 +142,9 @@ const CategoryProducts = () => {
 						</div>
 					
 					</div>
-				</Col>	
-				<Col className="col-sm-9 padding-right">
+				</div>
+				
+				<div className="col-sm-9 padding-right">
 					<div className="features_items">
 						<h2 className="title text-center">Features Items</h2>
 						<div className="col-sm-4">
@@ -688,13 +686,10 @@ const CategoryProducts = () => {
 							  </a>			
 						</div>
 					</div>
-					
-				</Col>
-			</Row>
-		</Container>
-	</section>
-
+				</div>
+			</div>
+		</div>
     );
 };
 
-export default CategoryProducts;
+export default Home;
