@@ -2,7 +2,7 @@ import React from 'react';
 import Cart from '../components/shop/cart';
 import Checkout from "../components/shop/checkout";
 import Products from "../components/shop/products";
-import ProductDetails from "../components/shop/product-details";
+import ProductDetails from "./productDetails";
 import Login from "../components/shop/login";
 import {
   useRouteMatch,
@@ -24,7 +24,7 @@ const Shop = () => {
           <Route path={`${path}/products`}>
             <Products />
           </Route>
-          <Route path={`${path}/product-details`}>
+          <Route path={`${path}/productDetails`}>
             <ProductDetails />
           </Route>
           <Route path={`${path}/checkout`}>

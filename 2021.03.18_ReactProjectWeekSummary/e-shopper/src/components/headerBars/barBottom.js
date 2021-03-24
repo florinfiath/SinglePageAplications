@@ -68,7 +68,7 @@ const BarBottom = () => {
                       <Link to="/PageError">404</Link>
                     </li>
                     <li>
-                      <Link to="/contact">Contact</Link>
+                      <Link to="/contactUs">Contact</Link>
                     </li>
                   </ul>
                 </div>

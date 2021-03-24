@@ -1,10 +1,21 @@
 import React from 'react';
-import { useParams } from "react-router-dom";
+import { useParams,useHistory } from "react-router-dom";
 
 const ProductsDetails = (props) => {
+
+ React.useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
+
+// use history is a hook to let us navigate to any rout or link dynamically
+const history = useHistory;
+
     const { id } = useParams();
     console.log(id);
-    const foundProduct = props.products.find((element) => element.id == id);
+    const foundProduct = props.products.find((element) => element.id == id)
+    if(!foundProduct){
+      history.push('/404')
+    }
 return (
   <section>
     <div className="container">
@@ -270,7 +281,7 @@ return (
             <div className="product-details">
               <div className="col-sm-5">
                 <div className="view-product">
-                  <img src="../../../images/product-details/1.jpg" alt="" />
+                  <img src={foundProduct.imgUrl} alt="" />
                   <h3>ZOOM</h3>
                 </div>
                 <div
@@ -282,39 +293,19 @@ return (
                     <div className="item active">
                       <a href="">
                         <img
-                          src="../../../images/product-details/similar1.jpg"
+                          src="/images/product-details/similar1.jpg"
                           alt=""
                         />
                       </a>
                       <a href="">
                         <img
-                          src="../../../images/product-details/similar2.jpg"
+                          src="/images/product-details/similar2.jpg"
                           alt=""
                         />
                       </a>
                       <a href="">
                         <img
-                          src="../../../images/product-details/similar3.jpg"
-                          alt=""
-                        />
-                      </a>
-                    </div>
-                    <div className="item">
-                      <a href="">
-                        <img
-                          src="../../../images/product-details/similar1.jpg"
-                          alt=""
-                        />
-                      </a>
-                      <a href="">
-                        <img
-                          src="../../../images/product-details/similar2.jpg"
-                          alt=""
-                        />
-                      </a>
-                      <a href="">
-                        <img
-                          src="../../../images/product-details/similar3.jpg"
+                          src="/images/product-details/similar3.jpg"
                           alt=""
                         />
                       </a>
@@ -322,24 +313,45 @@ return (
                     <div className="item">
                       <a href="">
                         <img
-                          src="../../../images/product-details/similar1.jpg"
+                          src="/images/product-details/similar1.jpg"
                           alt=""
                         />
                       </a>
                       <a href="">
                         <img
-                          src="../../../images/product-details/similar2.jpg"
+                          src="/images/product-details/similar2.jpg"
                           alt=""
                         />
                       </a>
                       <a href="">
                         <img
-                          src="../../../images/product-details/similar3.jpg"
+                          src="/images/product-details/similar3.jpg"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div className="item">
+                      <a href="">
+                        <img
+                          src="/images/product-details/similar1.jpg"
+                          alt=""
+                        />
+                      </a>
+                      <a href="">
+                        <img
+                          src="/images/product-details/similar2.jpg"
+                          alt=""
+                        />
+                      </a>
+                      <a href="">
+                        <img
+                          src="/images/product-details/similar3.jpg"
                           alt=""
                         />
                       </a>
                     </div>
                   </div>
+
                   <a
                     className="left item-control"
                     href="#similar-product"
@@ -359,20 +371,17 @@ return (
               <div className="col-sm-7">
                 <div className="product-information">
                   <img
-                    src="../images/product-details/new.jpg"
+                    src="images/product-details/new.jpg"
                     className="newarrival"
                     alt=""
                   />
-                  <h2>Anne Klein Sleeveless Colorblock Scuba</h2>
-                  <p>Web ID: 1089772</p>
-                  <img
-                    src="../../../images/product-details/rating.png"
-                    alt=""
-                  />
+                  <h2>{foundProduct.title}</h2>
+                  <p>Web ID: {foundProduct.id}</p>
+                  <img src="images/product-details/rating.png" alt="" />
                   <span>
-                    <span>US $59</span>
+                    <span>US $ {foundProduct.price}</span>
                     <label>Quantity:</label>
-                    <input type="text" value="3" />
+                    <input type="text" />
                     <button type="button" className="btn btn-fefault cart">
                       <i className="fa fa-shopping-cart"></i>
                       Add to cart
@@ -389,7 +398,7 @@ return (
                   </p>
                   <a href="">
                     <img
-                      src="../images/product-details/share.png"
+                      src="images/product-details/share.png"
                       className="share img-responsive"
                       alt=""
                     />
