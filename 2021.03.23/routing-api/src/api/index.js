@@ -66,7 +66,7 @@ export const getTodos = (id) => {
 
 export const getPhotos = (albumId) => {
   return new Promise((resolve, reject) => {
-    fetch(`https://jsonplaceholder.typicode.com/users/${albumId}/photos`)
+    fetch(`https://jsonplaceholder.typicode.com/albums/${albumId}/photos`)
       .then((response) => {
         if (response.status === 200) {
           response
@@ -109,29 +109,6 @@ export const getComments = (postId) => {
       });
   });
 };
-
-// export const getComments = (id) => {
-//   return new Promise((resolve, reject) => {
-//     fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
-//       .then((response) => {
-//         if (response.status === 200) {
-//           response
-//             .json()
-//             .then((data) => {
-//               resolve(data);
-//             })
-//             .catch((error) => {
-//               reject(error);
-//             });
-//         } else {
-//           reject(response.status);
-//         }
-//       })
-//       .catch((error) => {
-//         reject(error);
-//       });
-//   });
-// };
 
 export const getAlbums = (id) => {
   return new Promise((resolve, reject) => {

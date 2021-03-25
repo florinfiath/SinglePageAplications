@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getAlbums, getPhotos } from "../api";
-
-const Albums= () => {
+const Albums = () => {
   const [state, setState] = useState({ albums: [] });
-
   const { id } = useParams();
   useEffect(() => {
     getAlbums(id).then((data) => {
@@ -12,70 +10,71 @@ const Albums= () => {
     });
   }, []);
 
-  
-
-  const showPhotos = (albumId) => {
-    
-    getPhotos(albumId).then(data => {
-       const Photos = state.albums.map(album => {
-         if(album.id === albumId) {
-           album.photos = data
-         }
-         return album;
-       })
-      setState({albums : Photos})
+  const getAlbumPhotos = (albumId) => {
+    const foundAlbum = state.albums.find(album => album.id === albumId)
+    if(!foundAlbum.show){
+    getPhotos(albumId).then((data) => {
+      const newAlbums = state.albums.map((album) => {
+        if (album.id === albumId) {
+          album.photos = data;
+          album.show = true;
+        }
+        return album;
+      });
+      setState({ albums: newAlbums });
     })
-
+  } else {
+    const newAlbums = state.albums.map(album => {
+      if(album.id === albumId){
+        foundAlbum.show = false;
+      }
+      return album;
+    })
+    setState({albums: newAlbums})
   }
+  };
 
-  return (
-    <ul>
-      {state.albums.map((album) => (
-        <li key={album.id}>
-          <p>
-            <strong>User Id:</strong>
-            {album.id}
-          </p>
-          <p>
-            <strong>Title:</strong>
-            {album.title}
-          </p>
-          <button
-            onClick={() => {
-              showPhotos(album.id);
-            }}
-          >
-            ShowPhotos
-          </button>
-          <ul>
-            <li>
-              {album.photos ? (
-                <ul>
-                  {album.photos.map((photo) => (
-                    <li key={photo.id}>
-                      <p>
-                        <strong>Photo Id:</strong>
-                        {photo.id}
-                      </p>
-                      <p>
-                        <strong>Photo Title:</strong>
-                        {photo.title}
-                      </p>
-                      <p>
-                        {" "}
-                        <strong>Photo url:</strong>
-                        {photo.url}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
-            </li>
-          </ul>
-        </li>
-      ))}
-    </ul>
-  );
+  const albumsElement = state.albums.map((album) => {
+    let photosElement = null;
+    if (album.photos && album.show) {
+      photosElement = (
+        <div className="row">
+          {album.photos.map((photo) => (
+            <div key={photo.id} className="col-md-3">
+              <div class="card">
+                <img
+                  class="card-img-top"
+                  src={photo.thumbnailUrl}
+                  alt={photo.title}
+                />
+                <div class="card-body">
+                  <h5 class="card-title">{photo.title}</h5>
+                  <p class="card-text">{photo.title}</p>
+                  <a href="#" class="btn btn-primary">
+                    Go somewhere
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      );
+    }
+    return (
+      <li key={album.id}>
+        <p> {album.title} </p>
+        <button
+          onClick={() => {
+            getAlbumPhotos(album.id);
+          }}
+        >
+          Photos
+        </button>
+        {photosElement}
+      </li>
+    );
+  });
+
+  return <ul>{albumsElement}</ul>;
 };
-
 export default Albums;
