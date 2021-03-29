@@ -12,3 +12,18 @@ export const deleteTodo = (idx) => {
     }
 
 }
+
+export const addInProgress = (todo,idx) => {
+    return {
+        type:'ADD_IN_PROGRESS',
+        payload: {todo,idx}
+    }
+}
+
+export const addDone = (inprogress, idx) => {
+    return {
+        type : 'ADD_DONE',
+        payload: {inprogress, idx}
+    }
+}
+

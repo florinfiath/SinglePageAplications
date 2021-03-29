@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {deleteTodo} from '../actions';
+import {deleteTodo,addInProgress} from '../actions';
 
 const ShowToDos = (props) => {
 
@@ -7,16 +7,21 @@ const ShowToDos = (props) => {
     props.delete(index)
 
   }
+  const addInProgressBtnClick = (todo,idx) =>{
+    props.addInProgress(todo,idx);
+    //props.delete(idx)
+  }
 
     return (
       <div>
+      <h2>ToDos</h2>
         <ul>
           {props.todolist.map((todo, idx) => (
             <li key={idx}>{todo}
             <button onClick={()=>{deleteBtnClick(idx)}}>Delete</button>
+            <button onClick={()=>{addInProgressBtnClick(todo,idx)}}>In progress</button>
             </li>
           ))}
-
         </ul>
       </div>
     );
@@ -24,8 +29,9 @@ const ShowToDos = (props) => {
 
 const mapStateToProps = (state) => {
   return ({
-        todolist: state.todos
+        todolist: state.todos,
+       
   })
 }
 
-export default connect(mapStateToProps, {delete: deleteTodo})(ShowToDos) ;
+export default connect(mapStateToProps, {delete: deleteTodo,addInProgress})(ShowToDos) ;
