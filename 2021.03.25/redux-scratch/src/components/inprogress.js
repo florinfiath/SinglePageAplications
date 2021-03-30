@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {addDone} from '../actions'
+import {addDone,deleteInProgress,backProgressToDos} from '../actions'
 
 const InProgress = (props) => {
 
@@ -8,20 +8,35 @@ const InProgress = (props) => {
         props.addDone(elm, idx);
       
     }
+     const deleteBtnClick = (idx) => {
+       props.delete(idx);
+     }
+
+     const backToDosBtnClick = (idx, elm) => {
+        props.backProgressToDos(idx, elm);
+
+     }
 
     return (
-        <div>
-            <h2>In progress</h2>
-            <ul>
-                {props.progressList.map((elm, idx) => 
-                    <li key={idx}>
-                        {elm}
-                        <button onClick={()=>doneBtnClick(elm, idx)}>Done</button>
-                    </li>
-                )}     
-            </ul>
-            
-        </div>
+      <div>
+        <h2>In progress</h2>
+        <ul>
+          {props.progressList.map((elm, idx) => (
+            <li key={idx}>
+              {elm}
+              <button
+                onClick={() => {
+                  deleteBtnClick(idx);
+                }}
+              >
+                Delete
+              </button>
+              <button onClick={() => doneBtnClick(elm, idx)}>Done</button>
+              <button onClick={() => backToDosBtnClick(idx, elm)}>Back to ToDos</button>
+            </li>
+          ))}
+        </ul>
+      </div>
     );
 };
 
@@ -31,4 +46,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps,{addDone})(InProgress);
+export default connect(mapStateToProps,{ addDone,delete : deleteInProgress, backProgressToDos })(InProgress);
